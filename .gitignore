@@ -1,3 +1,11 @@
+# KEIL
+/Debug
+/DebugConfig
+/Listings
+JLinkSettings.ini
+*.uvguix.*
+*.scvd
+
 # Prerequisites
 *.d
 
