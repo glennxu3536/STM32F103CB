@@ -4,6 +4,5 @@
 
 void hcsr04_Init(void);
 void hcsr04_Trigger(void);
-void hcsr04_Echo(void);
 
 #endif

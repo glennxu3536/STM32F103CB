@@ -1,15 +1,22 @@
 #include "bsp_tim.h"
 #include "led_key.h"
 #include "bsp_systick.h"
+#include "bsp_uart.h"
+#include "hc_sr04.h"
 
 int main()
 {
-	SysTick_Configuration();
+	Uart1_Configuration();
+	Uart1_NVIC_Configuration();
 	
-	Led_Init(GPIOA, GPIO_Pin_1|GPIO_Pin_2|GPIO_Pin_3|GPIO_Pin_4);
 	TIM2_Configuration();
-	TIM2_NVIC_Configuration();
-	TIM2_START;
+	hcsr04_Init();
+	printf("Booting...\n");
+	RCC_TIM2_START;
 	
-	while(1);
+	while(1)
+	{
+		hcsr04_Trigger();
+		Delay(1000);
+	}
 }

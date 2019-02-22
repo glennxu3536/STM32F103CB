@@ -8,20 +8,34 @@ void SysTick_Configuration(void)
 
 void Delay(unsigned long time)
 {
-    uint32_t temp;
-    SysTick->LOAD=9000*time;
-    SysTick->CTRL=0X01;
-    SysTick->VAL=0;
-    do
-        temp=SysTick->CTRL;
-    while((temp&0x01)&&(!(temp&(1<<16))));
-    SysTick->CTRL=0;
-    SysTick->VAL=0;
+	uint32_t temp;
+  SysTick->LOAD=9000 * time;
+  SysTick->VAL=0;
+  SysTick->CTRL=0X01;
+  do
+		temp=SysTick->CTRL;
+  while((temp&0x01)&&(!(temp&(1<<16))));
+  SysTick->CTRL=0;
+  SysTick->VAL=0;
 }
 
+
 void Delay_us(unsigned long time)
+{		
+	uint32_t temp;
+  SysTick->LOAD=9 * time;
+  SysTick->VAL=0;
+  SysTick->CTRL=0X01;
+  do
+		temp=SysTick->CTRL;
+  while((temp&0x01)&&(!(temp&(1<<16))));
+  SysTick->CTRL=0;
+  SysTick->VAL=0;	 
+}
+
+void delay_us(unsigned long time)
 {
 	SysTick->CTRL |= (1<<1);
-	while(time); //n--一次的时间恰好是1us
+	while(time--); //n--一次的时间恰好是1us
 	SysTick->CTRL &= ~(1<<1);
 }

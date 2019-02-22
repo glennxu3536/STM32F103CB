@@ -120,7 +120,6 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGUARM</Key>
-          <Name>↖?燩鮲↖?燩鮲↖?</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -152,18 +151,18 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>45</LineNumber>
+          <LineNumber>27</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134218814</Address>
+          <Address>134223490</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>.\User\bsp_tim.c</Filename>
+          <Filename>.\User\hc_sr04.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\STM32F103CBT6\User/bsp_tim.c\45</Expression>
+          <Expression>\\STM32F103CBT6\User/hc_sr04.c\27</Expression>
         </Bp>
       </Breakpoint>
       <Tracepoint>
@@ -172,7 +171,7 @@
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
-        <aLwin>1</aLwin>
+        <aLwin>0</aLwin>
         <aCover>0</aCover>
         <aSer1>0</aSer1>
         <aSer2>0</aSer2>
