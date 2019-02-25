@@ -2,7 +2,9 @@
 /Debug
 /DebugConfig
 /Listings
+JLinkLog.txt
 JLinkSettings.ini
+*.uvoptx
 *.uvguix.*
 *.scvd
 
