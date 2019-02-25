@@ -2,7 +2,7 @@
 #include "led_key.h"
 #include "bsp_systick.h"
 
-void Key_Init(GPIO_TypeDef* GPIOx, uint16_t PIN)
+void Key_Init(GPIO_TypeDef* GPIOx, uint16_t PIN, GPIOMode_TypeDef MODE)
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
 	if     (GPIOx == GPIOA)
@@ -13,11 +13,11 @@ void Key_Init(GPIO_TypeDef* GPIOx, uint16_t PIN)
 		return;
 	GPIO_InitStructure.GPIO_Pin = PIN;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+	GPIO_InitStructure.GPIO_Mode = MODE;
 	GPIO_Init(GPIOx, &GPIO_InitStructure);
 }
 
-void Led_Init(GPIO_TypeDef* GPIOx, uint16_t PIN)
+void Led_Init(GPIO_TypeDef* GPIOx, uint16_t PIN, GPIOMode_TypeDef MODE)
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
 	if     (GPIOx == GPIOA)
@@ -28,7 +28,7 @@ void Led_Init(GPIO_TypeDef* GPIOx, uint16_t PIN)
 		return;
 	GPIO_InitStructure.GPIO_Pin = PIN;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+	GPIO_InitStructure.GPIO_Mode = MODE;
 	GPIO_Init(GPIOx, &GPIO_InitStructure);
 }
 
