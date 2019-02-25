@@ -94,7 +94,17 @@ void Uart2_Configuration(void)
 	
 }
 
-
+void USART1_IRQHandler()
+{
+	/*
+	if(USART_GetITStatus(USART1, USART_IT_RXNE) == SET)
+		str[count++] = USART_ReceiveData(USART1);
+	if(str[0] != 0xAA)
+		count = 0;
+	if(count > 2)
+		ctrl();
+	*/
+}
 
 void USART2_IRQHandler()
 {
@@ -113,6 +123,29 @@ void USART2_IRQHandler()
 		count = 0;
 	}
 	
+}
+
+void ctrl()
+{
+	switch(str[1])
+	{
+		case 0x01:
+			TIM_SetCompare2(TIM2, 500);
+			break;
+		case 0x02:
+			TIM_SetCompare2(TIM2, 1000);
+			break;
+		case 0x03:
+			TIM_SetCompare2(TIM2, 1500);
+			break;
+		case 0x04:
+			TIM_SetCompare2(TIM2, 2000);
+			break;
+		case 0x05:
+			TIM_SetCompare2(TIM2, 2500);
+			break;
+	}
+	count = 0;
 }
 
 int cal()

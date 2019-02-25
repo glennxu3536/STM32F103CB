@@ -9,7 +9,8 @@ void Uart1_NVIC_Configuration(void);
 void Uart2_NVIC_Configuration(void);
 void Uart1_Configuration(void);
 void Uart2_Configuration(void);
-//void USART2_IRQHandler(void);
+
+void ctrl(void);
 int cal(void);
 int fputc(int c, FILE *fp);
 
