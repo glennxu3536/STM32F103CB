@@ -32,5 +32,5 @@ void hcsr04_Trigger()
 	while(!GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_15));
 	TIM_SetCounter(TIM2, 0);
 	while(GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_15));
-	printf("%.1fcm\n", 0.017 * TIM_GetCounter(TIM2));
+	printf("Dis:%.1fcm\n", 0.017 * TIM_GetCounter(TIM2));
 }

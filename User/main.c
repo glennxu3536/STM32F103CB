@@ -1,33 +1,23 @@
 #include "bsp_tim.h"
 #include "led_key.h"
 #include "bsp_systick.h"
-#include "bsp_uart.h"
-
-extern int TIM3CH1_Complete;
-extern int TIM3CH1_Capture;
-extern int TIM3CH1_Overload;
+#include "oled.h"
+#include "hc_sr04.h"
 
 int main()
 {
-
-	TIM2_PWM_Configuration();
-	TIM3_INPUTCAPTURE_Confuguration();
-	Uart1_Configuration();
-	Uart1_NVIC_Configuration();
-	
-	printf("booting...\n");
+	OLED_Init();
+	printf("Booting...\n");
+	TIM2_Configuration();
+	TIM2_NVIC_Configuration();
+	TIM2_START;
+	hcsr04_Init();
 	RCC_TIM2_START;
-	RCC_TIM3_START;
-	
-	TIM_SetCompare2(TIM2, 20000);
-	
+	Delay(500);
 	while(1)
 	{
-		if(TIM3CH1_Complete == 1)
-		{
-			printf("%dus\n", TIM3CH1_Overload * 65536 + TIM3CH1_Capture);
-			TIM3CH1_Complete = 0;
-			TIM3CH1_Overload = 0;
-		}
+		OLED_ClearFor();
+		hcsr04_Trigger();
+		Delay(500);
 	}
 }

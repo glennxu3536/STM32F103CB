@@ -601,6 +601,11 @@
               <FileType>5</FileType>
               <FilePath>.\User\hc_sr04.h</FilePath>
             </File>
+            <File>
+              <FileName>oled.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\oled.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
