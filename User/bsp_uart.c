@@ -1,8 +1,10 @@
 #include "bsp_uart.h"
+#include "bsp_at24c02.h"
 
 int flag = 0;
 int count = 0;
 unsigned char str[7];
+extern unsigned char i;
 
 void Uart1_NVIC_Configuration()
 {
@@ -96,14 +98,8 @@ void Uart2_Configuration(void)
 
 void USART1_IRQHandler()
 {
-	/*
 	if(USART_GetITStatus(USART1, USART_IT_RXNE) == SET)
-		str[count++] = USART_ReceiveData(USART1);
-	if(str[0] != 0xAA)
-		count = 0;
-	if(count > 2)
-		ctrl();
-	*/
+		IIC_Write_Byte(0, (unsigned int)USART_ReceiveData(USART1));
 }
 
 void USART2_IRQHandler()

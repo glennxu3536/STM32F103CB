@@ -2,6 +2,21 @@
 #include "led_key.h"
 #include "bsp_systick.h"
 
+void Pin_Init(GPIO_TypeDef* GPIOx, uint16_t PIN, GPIOMode_TypeDef MODE, GPIOSpeed_TypeDef SPEED)
+{
+	GPIO_InitTypeDef GPIO_InitStructure;
+	if     (GPIOx == GPIOA)
+		RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
+	else if(GPIOx == GPIOB)
+		RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+	else
+		return;
+	GPIO_InitStructure.GPIO_Pin = PIN;
+	GPIO_InitStructure.GPIO_Speed = SPEED;
+	GPIO_InitStructure.GPIO_Mode = MODE;
+	GPIO_Init(GPIOx, &GPIO_InitStructure);
+}
+
 void Key_Init(GPIO_TypeDef* GPIOx, uint16_t PIN, GPIOMode_TypeDef MODE)
 {
 	GPIO_InitTypeDef GPIO_InitStructure;

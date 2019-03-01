@@ -9,5 +9,6 @@
 void Key_Init(GPIO_TypeDef* GPIOx, uint16_t PIN, GPIOMode_TypeDef MODE);
 void Led_Init(GPIO_TypeDef* GPIOx, uint16_t PIN, GPIOMode_TypeDef MODE);
 int KeyScan(GPIO_TypeDef* GPIOx, uint16_t PIN);
+void Pin_Init(GPIO_TypeDef* GPIOx, uint16_t PIN, GPIOMode_TypeDef MODE, GPIOSpeed_TypeDef SPEED);
 
 #endif

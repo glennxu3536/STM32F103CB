@@ -601,6 +601,16 @@
               <FileType>5</FileType>
               <FilePath>.\User\hc_sr04.h</FilePath>
             </File>
+            <File>
+              <FileName>bsp_at24c02.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\User\bsp_at24c02.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_at24c02.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\bsp_at24c02.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
