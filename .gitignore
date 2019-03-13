@@ -1,6 +1,6 @@
 # KEIL
-/Listing/
-/Output/
+Listing/
+Output/
 Project/RVMDK/DebugConfig/
 Project/RVMDK/RTE/
 JLinkLog.txt
