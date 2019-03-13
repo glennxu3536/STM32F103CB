@@ -1,12 +1,11 @@
 # KEIL
-/Debug
-/DebugConfig
-/Listings
-JLinkLog.txt
-JLinkSettings.ini
-*.uvoptx
-*.uvguix.*
-*.scvd
+/Listing/
+/Output/
+Project/RVMDK/DebugConfig/
+Project/RVMDK/RTE/
+Project/RVMDK/JLinkLog.txt
+Project/RVMDK/JLinkSettings.ini
+Project/RVMDK/*.uvguix.*
 
 # Prerequisites
 *.d
@@ -51,12 +50,3 @@ JLinkSettings.ini
 *.su
 *.idb
 *.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
