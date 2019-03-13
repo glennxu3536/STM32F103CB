@@ -3,9 +3,9 @@
 /Output/
 Project/RVMDK/DebugConfig/
 Project/RVMDK/RTE/
-Project/RVMDK/JLinkLog.txt
-Project/RVMDK/JLinkSettings.ini
-Project/RVMDK/*.uvguix.*
+JLinkLog.txt
+JLinkSettings.ini
+*.uvguix.*
 
 # Prerequisites
 *.d
