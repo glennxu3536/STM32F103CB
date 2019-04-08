@@ -567,19 +567,14 @@
               <FilePath>..\..\Bsp\bsp.c</FilePath>
             </File>
             <File>
-              <FileName>LedAndKey.c</FileName>
+              <FileName>bsp_uart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\Bsp\LedAndKey.c</FilePath>
+              <FilePath>..\..\Bsp\bsp_uart.c</FilePath>
             </File>
             <File>
-              <FileName>uart.c</FileName>
+              <FileName>led_key.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\Bsp\uart.c</FilePath>
-            </File>
-            <File>
-              <FileName>uart.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\Bsp\uart.h</FilePath>
+              <FilePath>..\..\Bsp\led_key.c</FilePath>
             </File>
           </Files>
         </Group>

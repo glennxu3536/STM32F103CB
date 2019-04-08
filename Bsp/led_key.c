@@ -1,6 +1,7 @@
 #include <stm32f10x.h>
 #include "led_key.h"
-#include "bsp_systick.h"
+
+OS_ERR err;
 
 void Key_Init(GPIO_TypeDef* GPIOx, uint16_t PIN, GPIOMode_TypeDef MODE)
 {
@@ -36,7 +37,7 @@ int KeyScan(GPIO_TypeDef* GPIOx, uint16_t PIN)
 {
 	if(!GPIO_ReadInputDataBit(GPIOx, PIN))
 	{
-		Delay(20);
+		OSTimeDly(20, OS_OPT_TIME_DLY ,&err);
 		if(!GPIO_ReadInputDataBit(GPIOx, PIN))
 		{
 			while(!GPIO_ReadInputDataBit(GPIOx, PIN));
@@ -44,7 +45,7 @@ int KeyScan(GPIO_TypeDef* GPIOx, uint16_t PIN)
 		}
 		else
 		{
-			while(!GPIO_ReadInputDataBit(GPIOx, PIN));
+			while(!GPIO_ReadInputDataBit(GPIOx, PIN));//到底有没有用
 			return KEY_OFF;
 		}	 
 	}

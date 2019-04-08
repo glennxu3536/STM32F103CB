@@ -10,8 +10,8 @@ void BSP_Init(void)
 {
   SysTick_init();
   
-  /* LED 端口初始化 */
-  Led_Configuration();
+  /* LED1-4 初始化 */
+  Led_Init(GPIOA, GPIO_Pin_1|GPIO_Pin_2|GPIO_Pin_3|GPIO_Pin_4, GPIO_Mode_Out_PP);
 	/* UART1 端口初始化 */
 	Uart1_Configuration();
 }

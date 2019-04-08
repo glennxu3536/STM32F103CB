@@ -2,6 +2,8 @@
 #define _LED_KEY_H
 
 #include <stm32f10x.h>
+#include "app.h"
+
 #define KEY_ON  0
 #define KEY_OFF 1
 #define LED_TOGGLE (GPIOA->ODR ^= GPIO_Pin_1|GPIO_Pin_2|GPIO_Pin_3|GPIO_Pin_4)

@@ -4,6 +4,7 @@
 #include "bsp.h" 
 #include "os.h"  		
 #include "os_type.h"
+#include <string.h>
 
 /**************** 用户任务声明 *******************/
 void Task_LED1(void *p_arg);

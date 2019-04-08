@@ -3,8 +3,8 @@
 
 #include "stm32f10x.h"
 #include "os_cfg_app.h"
-#include "LedAndKey.h"
-#include "uart.h"
+#include "led_key.h"
+#include "bsp_uart.h"
 
 void BSP_Init(void);
 void SysTick_init(void);

@@ -1,5 +1,5 @@
-#ifndef __UART_H__
-#define __UART_H__
+#ifndef __BSP_UART_H__
+#define __BSP_UART_H__
 
 #include <stm32f10x.h>
 #include <stdio.h>
